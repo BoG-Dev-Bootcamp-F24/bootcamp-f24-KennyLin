@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<!-- Your HTML Here -->
+    <body>
+        <audio id="bg-music" controls autoplay loop>
+            <source src="WonderfulMomentsInNarin1.ogg" type="audio/ogg">
+            <source src="WonderfulMomentsInNarin1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio> 
+
+        <div class="card">
+            <div class="card-header">
+                <h1 id = "title">Kenny Lin</h1>
+            </div>
+            <div class="card-body">
+                <img id="pfp" src="pfp.jpg" alt="pfp" class="card-image">
+
+                <p id="desc">
+                    Heya, my name is Kenny. I am a third year Computer Science major from a small town in Long Island, New York called Southold. 
+                    I often spend my free time there taking long walks or fishing at the beach where I would take the oppurtunity to clean up any trash left behind by others. 
+                    Additionally whenever I'm back home I try to participate in food drives at my local food shelter
+                    as well as help with my parent's family business. While I'm attending college at Georgia Tech I find myself tutoring others who need help with certain courses in my free time.
+                    <br><br>I also have two cats (Wanted to include)
+                </p>
+            </div>
+            <button onclick="about()">About Me</button>
+            <button onclick="cats()">Cats</button>
+            <button class="change-bg-button" onclick="dark()">Dark Mode</button>
+            <button onclick="credits()">Art & Music Credits</button>
+
+        </div>
+
+        <script>
+            function about() {
+                var currDesc = document.getElementById("desc");
+                var title = document.getElementById("title")
+                var pic = document.getElementById("pfp")
+                pic.src = "pfp.jpg";
+                pic.style.display = "block";
+                pic.style.margin = "0 auto";
+                currDesc.innerHTML = `Heya, my name is Kenny. I am a third year Computer Science major from a small town in Long Island, New York called Southold. 
+                I often spend my free time there taking long walks or fishing at the beach where I would take the oppurtunity to clean up any trash left behind by others. 
+                Additionally whenever I'm back home I try to participate in food drives at my local food shelter as well as help with my parent's family business. 
+                While I'm attending college at Georgia Tech I find myself tutoring others who need help with certain courses in my free time.<br><br>I also have two cats (Wanted to include)`     
+                title.innerHTML = "Kenny Lin";
+            }
+
+            function credits() {
+                var currDesc = document.getElementById("desc");
+                var title = document.getElementById("title")
+                var pic = document.getElementById("pfp")
+                pic.style.display = "none";
+                title.innerHTML = "Credits";
+                currDesc.innerHTML = "Background GIF: <a href=\"https://steamcommunity.com/sharedfiles/filedetails/?id=3013723765\" target=\"_blank\">MapleStory: Sun-Mottled Plateau Wallpaper 桜鍵</a><br>Music: <a href=\"https://maplestory.fandom.com/wiki/Sun-Mottled_Plateau\" target=\"_blank\">MapleStory Fandom</a>"
+            }
+
+            function cats() {
+                var currDesc = document.getElementById("desc");
+                var title = document.getElementById("title")
+                var pic = document.getElementById("pfp")
+                title.innerHTML = "Cats";
+                currDesc.innerHTML = "Yuki and Luka";
+                pic.src = "cats.jpg";
+            }
+
+            function dark() {
+                document.body.classList.toggle('dark-mode');
+        }
+        </script>
+
+
+    </body>
+</html>
