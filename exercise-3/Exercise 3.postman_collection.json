@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "e15b7477-4c82-456d-8c96-875950dd0f90",
+		"name": "Exercise 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38387315"
+	},
+	"item": [
+		{
+			"name": "GET Request (FIXER)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://data.fixer.io/api/latest?access_key={{FixerKey}}&symbols=CNY,JPY,KRW",
+					"protocol": "http",
+					"host": [
+						"data",
+						"fixer",
+						"io"
+					],
+					"path": [
+						"api",
+						"latest"
+					],
+					"query": [
+						{
+							"key": "access_key",
+							"value": "{{FixerKey}}"
+						},
+						{
+							"key": "symbols",
+							"value": "CNY,JPY,KRW"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Request, Path Parameter (POKEAPI)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/pokemon/mimikyu-disguised",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pokemon",
+						"mimikyu-disguised"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Request, Query Parameter (Fun Translations)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.funtranslations.com/translate/yoda.json?text=I hate Introduction to Computer Systems and Networks, please get me out.",
+					"protocol": "https",
+					"host": [
+						"api",
+						"funtranslations",
+						"com"
+					],
+					"path": [
+						"translate",
+						"yoda.json"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "I hate Introduction to Computer Systems and Networks, please get me out."
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET TrelloID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/boards/kqOsrgWC/lists?key={{TrelloAPI}}}&token={{TrelloToken}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						"kqOsrgWC",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{TrelloAPI}}}"
+						},
+						{
+							"key": "token",
+							"value": "{{TrelloToken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Request (Trello)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"pm.environment.set(\"card_id\", jsonData.id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Bits of Good Excercise 3\",\r\n  \"desc\": \"It's due tommorow!.\",\r\n  \"pos\": \"top\",\r\n  \"due\": \"2024-09-18\",\r\n  \"idList\": \"66e314d146779f2e6a8dc242\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.trello.com/1/cards?key={{TrelloAPI}}&token={{TrelloToken}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{TrelloAPI}}"
+						},
+						{
+							"key": "token",
+							"value": "{{TrelloToken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Request (Trello)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/{{card_id}}?key={{TrelloAPI}}&token={{TrelloToken}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"{{card_id}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{TrelloAPI}}"
+						},
+						{
+							"key": "token",
+							"value": "{{TrelloToken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://httpbin.org/delete",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "FixerKey",
+			"value": "b2680c6aa92122f0b5f7213fb6cd74d4"
+		}
+	]
+}
