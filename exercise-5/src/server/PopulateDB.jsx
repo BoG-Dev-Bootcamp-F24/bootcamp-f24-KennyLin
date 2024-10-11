@@ -3,7 +3,7 @@ import fs from 'fs/promises';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import path from 'path';
-import { Train, Station } from './api.js';
+import { Train, Station } from './Server.js';
 
 dotenv.config();
 
