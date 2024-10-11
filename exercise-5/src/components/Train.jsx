@@ -54,10 +54,10 @@ export default function Train({ trainData }) {
  * @param {String} name 
  * @returns 
  */
-function fixStationName( name ) {
+function fixCapitalization( name ) {
     if (!name) return '';
-    name = name.toLowerCase();
-    words = name.split(" ")
+    
+    let words = name.toLowerCase().split(" ")
     for (let i = 0; i < words.length; i++) {
         words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
     }
