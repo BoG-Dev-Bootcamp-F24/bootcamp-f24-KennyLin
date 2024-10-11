@@ -1,0 +1,48 @@
+.page_container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    border: 1px solid gray;
+}
+
+.title_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+}
+
+.lines_page_container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.train_list_column {
+    display: flex;
+    flex-direction: column;
+    flex: 6;
+    height: 100%;
+    overflow-y: auto;
+    max-width: 600px;
+}
+
+.navbar_column {
+    display: flex;
+    flex: 0.5;
+    height: 100%;
+    overflow-y: auto;
+    min-width: 200px;
+    max-width: 500px;
+}
+
+.options_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 6;
+    max-width: 500px;
+    gap: 10px;
+}
