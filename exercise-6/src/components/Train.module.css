@@ -1,0 +1,74 @@
+.trainContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 2px solid black;
+  height: 10vh;
+  max-height: 100px;
+  width: 100%; /* Ensure each train item takes full width */
+  padding: 8px 0px;
+}
+
+.stationLetter {
+  display: flex;
+  font-size: 2.5em;
+  font-weight: bold;
+  width: 6%;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}   
+
+.trainInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.5em;
+}
+
+.lineContainer {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  border-radius: 8px;
+  font-size: 0.9em;
+  line-height: 1.2;
+  white-space: nowrap;
+  font-weight: bold;
+  color: white;
+}
+
+.lineName {
+  text-transform: capitalize;
+}
+
+.delay {
+  margin-left: 5px;
+  font-size: 1em;
+  margin-left: 40px;
+}
+
+.trainInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeToStation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: green;
+  height: 100%;
+  margin-left: 40px;
+}
+
+.timeRow {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.unitRow {
+  font-size: 1em;
+}   
+
