@@ -20,9 +20,15 @@ export default function TrainList({ line, station, trainData, direction, arrival
 
     return (
         <div className={styles.trainList}>
-            {filteredTrains.map((trainObject) => (
-                <Train key={trainObject._id} trainData={trainObject} />
-            ))}
+            {filteredTrains.length > 0 ? (
+                filteredTrains.map((trainObject) => (
+                    <Train key={trainObject._id} trainData={trainObject} />
+                ))
+            ) : (
+                <div className={styles.noTrains}>
+                    <span className={styles.noTrainsText}>No trains available at this time.</span>
+                </div>
+            )}
         </div>
     );
 }
